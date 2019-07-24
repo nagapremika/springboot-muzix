@@ -40,7 +40,7 @@ public class MuzixController {
         return new ResponseEntity<>(muzixService.getAllMuzix(), HttpStatus.OK);
     }
 //Handles delete operation
-    @PostMapping("delete")
+    @DeleteMapping("muzix")
     public ResponseEntity<?> deleteMuzix(@RequestBody Muzix muzix) {
         ResponseEntity responseEntity;
         try {
@@ -51,7 +51,7 @@ public class MuzixController {
         return responseEntity;
     }
 //Handles update operation
-    @PostMapping("update")
+    @PutMapping("muzix")
     public ResponseEntity<?> updateMuzix(@RequestBody Muzix muzix) {
         ResponseEntity responseEntity;
         try {
@@ -62,18 +62,5 @@ public class MuzixController {
         }
         return responseEntity;
     }
-
-
-
-//Handles TrackByName
-@PostMapping("trackByName")
-    public ResponseEntity<?> trackByName(@RequestBody Muzix muzix)
-{
-    return new ResponseEntity<>(muzixService.trackByName(muzix.getName()),HttpStatus.OK);
-}
-
-
-
-
 
     }
