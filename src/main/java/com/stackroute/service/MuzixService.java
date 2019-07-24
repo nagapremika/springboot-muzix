@@ -9,4 +9,5 @@ public interface MuzixService {     //Interface MuzixService
     public List<Muzix> getAllMuzix();
     public boolean updateMuzix(Muzix muzix);
     public boolean deleteMuzix(int muzoxId);
+    public List<Muzix> trackByName(String name);
 }

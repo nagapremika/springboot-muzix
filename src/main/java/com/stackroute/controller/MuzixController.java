@@ -50,6 +50,13 @@ public class MuzixController {
         return new ResponseEntity<Boolean>(muzixService.updateMuzix(muzix),HttpStatus.OK);
     }
 
+//Handles TrackByName
+@PostMapping("trackByName")
+    public ResponseEntity<?> trackByName(@RequestBody Muzix muzix)
+{
+    return new ResponseEntity<>(muzixService.trackByName(muzix.getName()),HttpStatus.OK);
+}
+
 
 
 

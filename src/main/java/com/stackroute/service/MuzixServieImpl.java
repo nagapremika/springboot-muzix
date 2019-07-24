@@ -38,10 +38,18 @@ public class MuzixServieImpl implements MuzixService {      //Implements MuzixSe
 
     }
 
+
     @Override       //overrides deleteMuzix
     public boolean deleteMuzix(int id) {
         muzixRepository.deleteById(id);
         return true;
 
+    }
+
+    @Override       //overrides trackByName
+    public List<Muzix> trackByName(String name) {
+        Muzix muzix=new Muzix();
+        muzix.setName(name);
+        return muzixRepository.trackByName(muzix.getName());
     }
 }
