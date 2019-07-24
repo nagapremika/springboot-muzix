@@ -19,17 +19,13 @@ public class MuzixController {
     }
 // Handles creation operation
     @PostMapping("muzix")
-    public ResponseEntity<?> saveMuzix(@RequestBody Muzix muzix)
+    public ResponseEntity<?> saveMuzix(@RequestBody Muzix muzix) throws TrackAlreadyExistsException
     {
         ResponseEntity responseEntity;
-        try{
+
             muzixService.saveMuzix(muzix);
             responseEntity=new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
-        }
-        catch (TrackAlreadyExistsException exception)
-        {
-            responseEntity=new ResponseEntity<String>(exception.getMessage(), HttpStatus.CONFLICT);
-        }
+
         return responseEntity;
     }
 //Handles read operation
@@ -41,26 +37,19 @@ public class MuzixController {
     }
 //Handles delete operation
     @DeleteMapping("muzix")
-    public ResponseEntity<?> deleteMuzix(@RequestBody Muzix muzix) {
-        ResponseEntity responseEntity;
-        try {
+    public ResponseEntity<?> deleteMuzix(@RequestBody Muzix muzix) throws TrackNotFoundException {
+
+
             return new ResponseEntity<Boolean>(muzixService.deleteMuzix(muzix.getId()), HttpStatus.OK);
-        } catch (TrackNotFoundException exception) {
-            responseEntity = new ResponseEntity<String>(exception.getMessage(), HttpStatus.CONFLICT);
-        }
-        return responseEntity;
+
     }
 //Handles update operation
     @PutMapping("muzix")
-    public ResponseEntity<?> updateMuzix(@RequestBody Muzix muzix) {
-        ResponseEntity responseEntity;
-        try {
+    public ResponseEntity<?> updateMuzix(@RequestBody Muzix muzix) throws TrackNotFoundException {
+
 
             return new ResponseEntity<Boolean>(muzixService.updateMuzix(muzix), HttpStatus.OK);
-        } catch (TrackNotFoundException exception) {
-            responseEntity = new ResponseEntity<String>(exception.getMessage(), HttpStatus.CONFLICT);
-        }
-        return responseEntity;
+
     }
 
     }
