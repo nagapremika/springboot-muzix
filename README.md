@@ -1,3 +1,4 @@
 # springboot-muzix
 
-1. Complete all the endpoints for CRUD operations on Muzix
+3. Add an endpoint to search trackByName. Understand @Query and parameter passing to
+@Query
