@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # springboot-assignment
 
 Muzix Application Case Study
@@ -34,8 +34,5 @@ multiple device screens.
 novice expert Internet users.
 
 Tools to be used: Maven, Spring Boot, Mysql database, Postman, Tomcat server.
-=======
-# springboot-muzix
 
-1. Complete all the endpoints for CRUD operations on Muzix
->>>>>>> 97c2db4ee8a10d60b202a446d2c697a10b2049e1
+
