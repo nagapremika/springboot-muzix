@@ -1,3 +1,3 @@
 # springboot-muzix
 
-7.Global exception using Controller advice
+Added Global exception using Controller advice
