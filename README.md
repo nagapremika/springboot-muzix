@@ -1,4 +1,4 @@
 # springboot-muzix
+In this branch,
 
-3. Add an endpoint to search trackByName. Understand @Query and parameter passing to
-@Query
+ An endpoint to search trackByName is added. @Query annotation is used
