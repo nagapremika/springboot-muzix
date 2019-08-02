@@ -1,3 +1,3 @@
 # springboot-muzix
 
-2. Use h2-console to view in-memory data
+Used h2-console to view in-memory data
