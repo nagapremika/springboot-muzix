@@ -1,8 +1,7 @@
 
 # springboot-assignment
 
-Muzix Application Case Study
-
+In this branch, Muzix application is created using mysql database
 1 Name of Project Muzix Application
 
 2 Objective/Vision This is an online application that helps users manage music
