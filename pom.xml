@@ -9,9 +9,15 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.stackroute</groupId>
+<<<<<<< HEAD
 	<artifactId>muzix</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>muzix</name>
+=======
+	<artifactId>muzixservice</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>muzixservice</name>
+>>>>>>> 97c2db4ee8a10d60b202a446d2c697a10b2049e1
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -29,6 +35,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 
 		<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
 		<!-- Dependency for Spring Test to be added -->
@@ -94,6 +101,26 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
+=======
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>2.1.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>2.1.6.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>javax.persistence-api</artifactId>
+			<version>2.2</version>
+>>>>>>> 97c2db4ee8a10d60b202a446d2c697a10b2049e1
 		</dependency>
 	</dependencies>
 
