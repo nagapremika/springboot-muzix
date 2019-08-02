@@ -1,3 +1,3 @@
 # springboot-muzix
-
-4. Generate API documentation using Swagger 2
+In this branch,
+API documentation is generated using Swagger 2
