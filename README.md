@@ -1,5 +1,5 @@
 # springboot-muzix
 
-5. Create custom exceptions TrackNotFoundException, TrackAlreadyExistsException in a
-com.stack....exceptions package. Perform appropriate exception handling and propagation
+ Created custom exceptions TrackNotFoundException, TrackAlreadyExistsException in a
+com.stackroute exceptions package. Performs appropriate exception handling and propagation
 Back.
