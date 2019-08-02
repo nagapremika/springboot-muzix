@@ -1,4 +1,5 @@
 # springboot-assignment
+In this branch, a muzix application is created using mongo database
 Muzix Application Case Study
 
 1 Name of Project Muzix Application
