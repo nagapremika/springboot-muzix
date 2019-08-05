@@ -53,13 +53,13 @@ public class MuzixServieImpl implements MuzixService, ApplicationListener<Contex
     }
 
     @Override       //overrides updateMuzix
-    public boolean updateMuzix(Muzix muzix) throws TrackNotFoundException {
+    public Muzix updateMuzix(Muzix muzix) throws TrackNotFoundException {
         if(muzixRepository.existsById(muzix.getId())) {
             muzix.setId(muzix.getId());
             muzix.setName(muzix.getName());
             muzix.setTrack(muzix.getTrack());
-            muzixRepository.save(muzix);
-            return true;
+          return  muzixRepository.save(muzix);
+            
         }
         else{
             throw new TrackNotFoundException("Track not found");
@@ -69,10 +69,10 @@ public class MuzixServieImpl implements MuzixService, ApplicationListener<Contex
 
 
     @Override       //overrides deleteMuzix
-    public boolean deleteMuzix(int id) throws TrackNotFoundException {
+    public Muzix deleteMuzix(int id) throws TrackNotFoundException {
         if(muzixRepository.existsById(id)) {
-            muzixRepository.deleteById(id);
-            return true;
+          return  muzixRepository.deleteById(id);
+            
         }
         else{
             throw new TrackNotFoundException("Track not found");
