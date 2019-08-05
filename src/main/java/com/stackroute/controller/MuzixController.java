@@ -24,7 +24,7 @@ public class MuzixController {
         ResponseEntity responseEntity;
         try{
             muzixService.saveMuzix(muzix);
-            responseEntity=new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
+            responseEntity=new ResponseEntity<>("successfully created", HttpStatus.CREATED);
         }
         catch (TrackAlreadyExistsException exception)
         {
@@ -46,7 +46,7 @@ public class MuzixController {
         try {
             return new ResponseEntity<Boolean>(muzixService.deleteMuzix(muzix.getId()), HttpStatus.OK);
         } catch (TrackNotFoundException exception) {
-            responseEntity = new ResponseEntity<String>(exception.getMessage(), HttpStatus.CONFLICT);
+            responseEntity = new ResponseEntity<>(exception.getMessage(), HttpStatus.CONFLICT);
         }
         return responseEntity;
     }
@@ -56,7 +56,7 @@ public class MuzixController {
         ResponseEntity responseEntity;
         try {
 
-            return new ResponseEntity<Boolean>(muzixService.updateMuzix(muzix), HttpStatus.OK);
+            return new ResponseEntity<>(muzixService.updateMuzix(muzix), HttpStatus.OK);
         } catch (TrackNotFoundException exception) {
             responseEntity = new ResponseEntity<String>(exception.getMessage(), HttpStatus.CONFLICT);
         }
