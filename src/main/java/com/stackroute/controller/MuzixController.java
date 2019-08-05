@@ -39,13 +39,13 @@ public class MuzixController {
     @PostMapping("delete")
     public ResponseEntity<?> deleteMuzix(@RequestBody Muzix muzix) throws TrackNotFoundException
     {
-        return new ResponseEntity<Boolean>(muzixService.deleteMuzix(muzix.getId()),HttpStatus.OK);
+        return new ResponseEntity<>(muzixService.deleteMuzix(muzix.getId()),HttpStatus.OK);
     }
 //Handles update operation
     @PostMapping("update")
     public ResponseEntity<?> updateMuzix(@RequestBody Muzix muzix) throws TrackNotFoundException
     {
-        return new ResponseEntity<Boolean>(muzixService.updateMuzix(muzix),HttpStatus.OK);
+        return new ResponseEntity<>(muzixService.updateMuzix(muzix),HttpStatus.OK);
     }
 
 
