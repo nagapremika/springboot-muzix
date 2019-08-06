@@ -44,7 +44,7 @@ public class MuzixController {
     public ResponseEntity<?> deleteMuzix(@RequestBody Muzix muzix) {
         ResponseEntity responseEntity;
         try {
-            return new ResponseEntity<Boolean>(muzixService.deleteMuzix(muzix.getId()), HttpStatus.OK);
+            return new ResponseEntity<Muzix>(muzixService.deleteMuzix(muzix.getId()), HttpStatus.OK);
         } catch (TrackNotFoundException exception) {
             responseEntity = new ResponseEntity<String>(exception.getMessage(), HttpStatus.CONFLICT);
         }
@@ -56,7 +56,7 @@ public class MuzixController {
         ResponseEntity responseEntity;
         try {
 
-            return new ResponseEntity<Boolean>(muzixService.updateMuzix(muzix), HttpStatus.OK);
+            return new ResponseEntity<Muzix>(muzixService.updateMuzix(muzix), HttpStatus.OK);
         } catch (TrackNotFoundException exception) {
             responseEntity = new ResponseEntity<String>(exception.getMessage(), HttpStatus.CONFLICT);
         }
