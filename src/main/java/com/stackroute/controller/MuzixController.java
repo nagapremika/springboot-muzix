@@ -12,6 +12,7 @@ import java.util.List;
 @RequestMapping("api")
 public class MuzixController 
 private  MuzixService muzixService;
+ResponseEntity responseEntity;
     public MuzixController(MuzixService muzixService)
     {
         this.muzixService=muzixService;
@@ -20,7 +21,6 @@ private  MuzixService muzixService;
     @PostMapping("muzix")
     public ResponseEntity<?> saveMuzix(@RequestBody Muzix muzix) throws TrackAlreadyExistsException
     {
-        ResponseEntity responseEntity;
 
         muzixService.saveTrack(muzix);  //Displays all tracks
         responseEntity=new ResponseEntity<>("Created successfully", HttpStatus.CREATED);    //Creates a track
