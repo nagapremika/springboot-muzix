@@ -29,20 +29,20 @@ public class MuzixServieImpl implements MuzixService {      //Implements MuzixSe
     }
 
     @Override       //overrides updateMuzix
-    public boolean updateMuzix(Muzix muzix) {
+    public Muzix updateMuzix(Muzix muzix) {
         muzix.setId(muzix.getId());
         muzix.setName(muzix.getName());
         muzix.setTrack(muzix.getTrack());
-        muzixRepository.save(muzix);
-        return true;
+        return muzixRepository.save(muzix);
+        
 
     }
 
 
     @Override       //overrides deleteMuzix
-    public boolean deleteMuzix(int id) {
-        muzixRepository.deleteById(id);
-        return true;
+    public Muzix deleteMuzix(int id) {
+       return muzixRepository.deleteById(id);
+       
 
     }
 
