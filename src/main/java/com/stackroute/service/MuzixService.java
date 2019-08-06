@@ -9,7 +9,7 @@ import java.util.List;
 public interface MuzixService {     //Interface MuzixService
     public Muzix saveMuzix(Muzix muzix) throws TrackAlreadyExistsException;
     public List<Muzix> getAllMuzix();
-    public boolean updateMuzix(Muzix muzix) throws TrackNotFoundException;
-    public boolean deleteMuzix(int muzoxId) throws TrackNotFoundException;
+    public Muzix updateMuzix(Muzix muzix) throws TrackNotFoundException;
+    public Muzix deleteMuzix(int muzoxId) throws TrackNotFoundException;
     
 }
