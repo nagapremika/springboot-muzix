@@ -1,5 +1,4 @@
 package com.stackroute.service;
-
 import com.stackroute.domain.Muzix;
 import com.stackroute.exception.TrackAlreadyExistsException;
 import com.stackroute.exception.TrackNotFoundException;
@@ -11,7 +10,6 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -44,14 +42,11 @@ public class MuzixServieImpl implements MuzixService, ApplicationListener<Contex
             throw new TrackAlreadyExistsException("track already exists");
         }
     }
-
-
     @Override       //overrides getAllMuzix
     public List<Muzix> getAllMuzix()
     {
         return muzixRepository.findAll();
     }
-
     @Override       //overrides updateMuzix
     public Muzix updateMuzix(Muzix muzix) throws TrackNotFoundException {
         if(muzixRepository.existsById(muzix.getId())) {
@@ -59,35 +54,24 @@ public class MuzixServieImpl implements MuzixService, ApplicationListener<Contex
             muzix.setName(muzix.getName());
             muzix.setTrack(muzix.getTrack());
           return  muzixRepository.save(muzix);
-            
-        }
+                 }
         else{
             throw new TrackNotFoundException("Track not found");
         }
-
     }
-
-
     @Override       //overrides deleteMuzix
     public Muzix deleteMuzix(int id) throws TrackNotFoundException {
         if(muzixRepository.existsById(id)) {
           return  muzixRepository.deleteById(id);
-            
-        }
+                }
         else{
             throw new TrackNotFoundException("Track not found");
         }
-
     }
-
-
-
     @Override       //overriding run()
     public void run(String... args) throws Exception {
         System.out.println("command line running before application starts");
-
     }
-
     @Override       //Overriding onApplicationEvent
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
         muzixRepository.save(new Muzix(1, name1, track1));
