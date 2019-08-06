@@ -1,5 +1,4 @@
 package com.stackroute.service;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -16,32 +15,25 @@ import java.util.List;
 public class MuzixServiceImpl implements MuzixService {     //class implementing MuzixService
     @Autowired
     private MuzixRepository muzixRepository;
-
     public MuzixServiceImpl(MuzixRepository muzixRepository) {
         this.muzixRepository = muzixRepository;
     }
-
-
-
-    @Override   //Implementing saveTrack()
+       @Override   //Implementing saveTrack()
     public Muzix saveTrack(Muzix muzix)
     {
       return  muzixRepository.save(muzix);
     }
-
     @Override   //Implementing getAllTracks()
     public List<Muzix> getAllTracks()
 
     {
         return muzixRepository.findAll();
     }
-
     @Override   //Implementing deleteTrack() by Id
     public List<Muzix> deleteTrack(int trackId) {
         muzixRepository.deleteById(trackId);
         return muzixRepository.findAll();
     }
-
     @Override   //Updates track
     public Muzix updateTrack(Muzix muzix,int id)  {
         if(muzixRepository.existsById(id))
@@ -58,10 +50,7 @@ public class MuzixServiceImpl implements MuzixService {     //class implementing
                 e.printStackTrace();
             }
         }
-
-
-
-        return muzix;
+       return muzix;
     }
     //using third party URL to get the tracks
 public void getList() {
