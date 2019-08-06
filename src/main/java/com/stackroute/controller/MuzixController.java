@@ -1,5 +1,4 @@
 package com.stackroute.controller;
-
 import com.stackroute.domain.Muzix;
 import com.stackroute.exception.TrackAlreadyExistsException;
 import com.stackroute.exception.TrackNotFoundException;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api")
 public class MuzixController {
     MuzixService muzixService;
-
+    ResponseEntity responseEntity;
     public MuzixController(MuzixService muzixService)
     {
         this.muzixService=muzixService;
@@ -21,12 +20,9 @@ public class MuzixController {
     @PostMapping("muzix")
     public ResponseEntity<?> saveMuzix(@RequestBody Muzix muzix) throws TrackAlreadyExistsException
     {
-        ResponseEntity responseEntity;
-
             muzixService.saveMuzix(muzix);
             responseEntity=new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
-
-        return responseEntity;
+            return responseEntity;
     }
 //Handles read operation
     @GetMapping("muzix")
@@ -38,18 +34,12 @@ public class MuzixController {
 //Handles delete operation
     @DeleteMapping("muzix")
     public ResponseEntity<?> deleteMuzix(@RequestBody Muzix muzix) throws TrackNotFoundException {
-
-
-            return new ResponseEntity<>(muzixService.deleteMuzix(muzix.getId()), HttpStatus.OK);
-
+           return new ResponseEntity<>(muzixService.deleteMuzix(muzix.getId()), HttpStatus.OK);
     }
 //Handles update operation
     @PutMapping("muzix")
     public ResponseEntity<?> updateMuzix(@RequestBody Muzix muzix) throws TrackNotFoundException {
-
-
-            return new ResponseEntity<>(muzixService.updateMuzix(muzix), HttpStatus.OK);
-
+          return new ResponseEntity<>(muzixService.updateMuzix(muzix), HttpStatus.OK);
     }
     //Handles TrackByName
     @PostMapping("trackByName")
