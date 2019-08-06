@@ -1,36 +1,21 @@
 package com.stackroute.controller;
-
 import com.stackroute.domain.Muzix;
-<<<<<<< HEAD
 import com.stackroute.exception.TrackAlreadyExistsException;
 import com.stackroute.exception.TrackNotFoundException;
-=======
->>>>>>> 97c2db4ee8a10d60b202a446d2c697a10b2049e1
 import com.stackroute.service.MuzixService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-<<<<<<< HEAD
 import java.util.List;
 
 @RestController     //RestController which performs both Controller and ResponseBody functionality
 @RequestMapping("api")
-public class MuzixController {
-
-    private  MuzixService muzixService;
-=======
-@RestController
-@RequestMapping("api")
-public class MuzixController {
-    MuzixService muzixService;
->>>>>>> 97c2db4ee8a10d60b202a446d2c697a10b2049e1
-
+public class MuzixController 
+private  MuzixService muzixService;
     public MuzixController(MuzixService muzixService)
     {
         this.muzixService=muzixService;
     }
-<<<<<<< HEAD
     // Handles creation operation
     @PostMapping("muzix")
     public ResponseEntity<?> saveMuzix(@RequestBody Muzix muzix) throws TrackAlreadyExistsException
@@ -43,7 +28,6 @@ public class MuzixController {
         return responseEntity;
     }
     //Handles read operation
-=======
 // Handles creation operation
     @PostMapping("muzix")
     public ResponseEntity<?> saveMuzix(@RequestBody Muzix muzix)
@@ -60,12 +44,9 @@ public class MuzixController {
         return responseEntity;
     }
 //Handles read operation
->>>>>>> 97c2db4ee8a10d60b202a446d2c697a10b2049e1
     @GetMapping("muzix")
     public ResponseEntity<?> getAllMuzix()
-
     {
-<<<<<<< HEAD
         muzixService.getList(); //Retrieves the track data
         return new ResponseEntity<>(muzixService.getAllTracks(), HttpStatus.OK);
     }
@@ -90,25 +71,18 @@ public class MuzixController {
         //tracks the track by the name of track
         return new ResponseEntity<List<Muzix>>(muzixService.getTracksByName(name), HttpStatus.OK);
     }
-
-=======
         return new ResponseEntity<>(muzixService.getAllMuzix(), HttpStatus.OK);
     }
 //Handles delete operation
     @PostMapping("delete")
     public ResponseEntity<?> deleteMuzix(@RequestBody Muzix muzix)
     {
-        return new ResponseEntity<Boolean>(muzixService.deleteMuzix(muzix.getId()),HttpStatus.OK);
+        return new ResponseEntity<Muzix>(muzixService.deleteMuzix(muzix.getId()),HttpStatus.OK);
     }
 //Handles update operation
     @PostMapping("update")
     public ResponseEntity<?> updateMuzix(@RequestBody Muzix muzix)
     {
-        return new ResponseEntity<Boolean>(muzixService.updateMuzix(muzix),HttpStatus.OK);
+        return new ResponseEntity<Muzix>(muzixService.updateMuzix(muzix),HttpStatus.OK);
     }
-
-
-
-
->>>>>>> 97c2db4ee8a10d60b202a446d2c697a10b2049e1
 }
