@@ -1,5 +1,4 @@
 package com.stackroute.controller;
-
 import com.stackroute.domain.Muzix;
 import com.stackroute.exception.TrackAlreadyExistsException;
 import com.stackroute.exception.TrackNotFoundException;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("api")
 public class MuzixController {
     MuzixService muzixService;
-
+    ResponseEntity responseEntity;
     public MuzixController(MuzixService muzixService)
     {
         this.muzixService=muzixService;
@@ -21,7 +20,6 @@ public class MuzixController {
     @PostMapping("muzix")
     public ResponseEntity<?> saveMuzix(@RequestBody Muzix muzix)
     {
-        ResponseEntity responseEntity;
         try{
             muzixService.saveMuzix(muzix);
             responseEntity=new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
@@ -35,7 +33,6 @@ public class MuzixController {
 //Handles read operation
     @GetMapping("muzix")
     public ResponseEntity<?> getAllMuzix()
-
     {
         return new ResponseEntity<>(muzixService.getAllMuzix(), HttpStatus.OK);
     }
