@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("api")
 public class MuzixController {
-    ResponseEntity responseEntity;
+   private ResponseEntity responseEntity;
     private  MuzixService muzixService;
     public MuzixController(MuzixService muzixService)
     {
