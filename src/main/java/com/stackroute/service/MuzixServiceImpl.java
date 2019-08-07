@@ -30,9 +30,9 @@ public class MuzixServiceImpl implements MuzixService {     //class implementing
         return muzixRepository.findAll();
     }
     @Override   //Implementing deleteTrack() by Id
-    public List<Muzix> deleteTrack(int trackId) {
-        muzixRepository.deleteById(trackId);
-        return muzixRepository.findAll();
+    public Muzix deleteTrack(int trackId) {
+        return muzixRepository.deleteById(trackId);
+        
     }
     @Override   //Updates track
     public Muzix updateTrack(Muzix muzix,int id)  {
