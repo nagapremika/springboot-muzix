@@ -12,7 +12,7 @@ import java.util.List;
 @RequestMapping("api")
 public class MuzixController 
 private  MuzixService muzixService;
-ResponseEntity responseEntity;
+private ResponseEntity responseEntity;
     public MuzixController(MuzixService muzixService)
     {
         this.muzixService=muzixService;
@@ -69,10 +69,9 @@ ResponseEntity responseEntity;
     public ResponseEntity<?> getTrackByName(@RequestParam String name) throws TrackNotFoundException
     {
         //tracks the track by the name of track
-        return new ResponseEntity<List<Muzix>>(muzixService.getTracksByName(name), HttpStatus.OK);
+        return new ResponseEntity<List<Muzix>(muzixService.getTracksByName(name), HttpStatus.OK);
     }
-        return new ResponseEntity<>(muzixService.getAllMuzix(), HttpStatus.OK);
-    }
+       
 //Handles delete operation
     @PostMapping("delete")
     public ResponseEntity<?> deleteMuzix(@RequestBody Muzix muzix)
